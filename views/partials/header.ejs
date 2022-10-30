@@ -9,7 +9,16 @@
 </head>
 <body>
 
+<!--<nav>-->
+<!--    <a href="/">Landing Page</a>-->
+<!--    |-->
+<!--</nav>-->
+
+
 <nav>
-    <a href="/">Landing Page</a>
-    |
+    <% if (user) { %>
+        <a href="/logout">LOG OUT</a>
+    <% } else { %>
+        <a href="/auth/google" class="login">LOG IN</a>
+    <% } %>
 </nav>
