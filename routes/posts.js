@@ -13,5 +13,12 @@ router.get('/new', ensureLoggedIn, postsCtrl.new);
 router.get('/:id', postsCtrl.show);
 // POST /posts (handle the new form being submitted)
 router.post('/', ensureLoggedIn, postsCtrl.create);
+// GET /posts/edit/:id
+// router.get('/edit/:id', ensureLoggedIn, postsCtrl.edit)
+// PUT /posts/edit
+// router.put('/:id', ensureLoggedIn, postsCtrl.update)
+// DELETE /posts/:id
+router.delete('/:id', ensureLoggedIn, postsCtrl.delete)
+
 
 module.exports = router;
