@@ -4,7 +4,7 @@ module.exports = {
   index,
   new: newPost,
   create,
-  // show,
+  show,
 };
 
 function index(req, res) {
@@ -36,17 +36,17 @@ function create (req, res) {
   req.body.user = req.user._id;
   req.body.userName = req.user.name;
   req.body.userAvatar = req.user.avatar;
-  Post.create(req.body), function(err, post) {
-    res.redirect("posts", { post });
-  }
+  const post = new Post(req.body);
+  post.save(function(err) {
+    console.log(err);
+    if (err) return res.redirect('/posts/new');
+    res.redirect("/posts");
+  });
 }
 
-// function show(req, res) {
-//   Post.findById(req.params.id)
-//   function(err) {
-//     res.render('posts/show', {
-//       name: 'Boulder Detail',
-//       post,
-//     });
-//   }
-// }
+function show(req, res) {
+  Post.findById(req.params.id, function(err, post) {
+    console.log(err);
+    res.render('posts/show', { name: 'Boulder Detail', post });
+  });
+}
