@@ -1,21 +1,18 @@
 <%- include('../partials/header') %>
 
-<h2>Look at all of these cool posts.</h2>
+<h2>Look at this cool post.</h2>
 
 
-<table>
+<table id="list">
     <thead>
     <tr>
         <th>Name</th>
     </tr>
     </thead>
     <tbody>
-    <% posts.forEach(function(p) { %>
         <tr>
-            <td><%= p.name %></td>
-            <td><a href="/posts/<%= p.name %>">Read more</a></td>
+            <td><%= post.name %></td>
         </tr>
-    <% }); %>
     </tbody>
 </table>
 

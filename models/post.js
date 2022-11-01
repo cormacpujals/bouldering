@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
+const enumValues = require('mongoose-enumvalues');
+
+
 const Schema = mongoose.Schema;
+
 
 const commentSchema = new Schema({
   content: {
@@ -23,6 +27,7 @@ const commentSchema = new Schema({
   timestamps: true
 });
 
+
 const postSchema = new Schema({
   name: {
     type: String,
@@ -30,11 +35,10 @@ const postSchema = new Schema({
   },
   grade: {
     type: String,
-    enum: [
-      'V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8',
+    enum:
+      ['V0', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8',
       'V9', 'V10', 'V11', 'V12', 'V13', 'V14', 'V15', 'V16',
-      'V17', 'V18'
-    ],
+      'V17', 'V18'],
   },
   description: {
     type: String,
@@ -49,13 +53,16 @@ const postSchema = new Schema({
     ref: 'User',
     required: true,
   },
+  img: {
+    data: Buffer,
+    type: String,
+  },
   userName: String,
   userAvatar: String,
   comments: [commentSchema],
 }, {
   timestamps: true
 });
-
 
 
 module.exports = mongoose.model('Post', postSchema);

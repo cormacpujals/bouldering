@@ -3,15 +3,15 @@ const router = express.Router();
 const postsCtrl = require('../controllers/posts');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-// All routes start with '/movies'
+// All routes start with '/posts'
 
-// GET /movies (display all movies)
+// GET /posts (display all posts)
 router.get('/', postsCtrl.index);
-// // GET /movies/new (display a form for entering a new movie)
-// router.get('/new', ensureLoggedIn, postsCtrl.new);
-// // GET /movies/:id (display a "detail/show" page for a single movie)
+// GET /posts/new (display a form for entering a new post)
+router.get('/new', ensureLoggedIn, postsCtrl.new);
+// GET /posts/:id (display a "detail/show" page for a single post)
 // router.get('/:id', postsCtrl.show);
-// // POST /movies (handle the new form being submitted)
-// router.post('/', ensureLoggedIn, postsCtrl.create);
+// POST /posts (handle the new form being submitted)
+router.post('/', ensureLoggedIn, postsCtrl.create);
 
 module.exports = router;

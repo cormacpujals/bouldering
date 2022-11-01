@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/posts" method="POST">
+    <h3>Post a boulder!</h3>
+    <label>Name:</label>
+    <input type="text" name="name">
+    <label>Grade</label>
+    <select name="grade">
+        <% validGrades.forEach(function(grade, idx) { %>
+            <option value="<%= grade %>" <%= idx === 0 ? 'selected' : ''%>>
+                <%= grade %>
+            </option>
+        <% }) %>
+    </select>
+    <label>Description:</label>
+    <input type="text" name="description" checked>
+    <label>Location</label>
+    <input type="text" name="location">
+    <input type="submit" value="Add Boulder">
+</form>
+
+<%- include('../partials/footer') %>
