@@ -4,19 +4,7 @@
     <h3>Post a boulder!</h3>
     <label>Name:</label>
     <input type="text" name="name" value="<%= post.name %>">
-    <label>Grade</label>
-    <select name="grade" value="<%= grade.name %>">
-        <% validGrades.forEach(function(grade, idx) { %>
-            <option value="<%= grade %>" <%= idx === 0 ? 'selected' : ''%>>
-                <%= grade %>
-            </option>
-        <% }) %>
-    </select>
-    <label>Description:</label>
-    <input type="text" name="description" checked>
-    <label>Location</label>
-    <input type="text" name="location">
-    <input type="submit" value="Add Boulder">
+    <input type="submit" value="Edit Boulder">
 </form>
 
 <%- include('../partials/footer') %>

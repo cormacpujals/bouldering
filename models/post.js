@@ -14,7 +14,7 @@ const commentSchema = new Schema({
     type: Number,
     min: 0,
     max: 4,
-    required: true,
+    // required: true,
   },
   user: {
     type: Schema.Types.ObjectId,

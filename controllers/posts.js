@@ -6,7 +6,7 @@ module.exports = {
   create,
   show,
   edit,
-  // update,
+  update,
   delete: deletePost,
 };
 
@@ -41,25 +41,25 @@ function show(req, res) {
 }
 
 function edit(req, res) {
-  Post.findOne({_id: req.params.id, userRecommending: req.user._id}, function(err, post) {
+  Post.findOne({_id: req.params.id, user: req.user._id}, function(err, post) {
     if (err || !post) return res.redirect('/posts');
-    res.render('posts/edit', {post});
+    res.render('posts/edit', { post });
   });
 }
 
-// function update(req, res) {
-//   Book.findOneAndUpdate(
-//     {_id: req.params.id, userRecommending: req.user._id},
-//     // update object with updated properties
-//     req.body,
-//     // options object with new: true to make sure updated doc is returned
-//     {new: true},
-//     function(err, book) {
-//       if (err || !book) return res.redirect('/books');
-//       res.redirect(`/books/${book._id}`);
-//     }
-//   );
-// }
+function update(req, res) {
+  Post.findOneAndUpdate(
+    {_id: req.params.id, user: req.user._id},
+    // update object with updated properties
+    req.body,
+    // options object with new: true to make sure updated doc is returned
+    {new: true},
+    function(err, post) {
+      if (err || !post) return res.redirect('/posts');
+      res.redirect(`/posts/${post._id}`);
+    }
+  );
+}
 
 function deletePost(req, res) {
   Post.findOneAndDelete(

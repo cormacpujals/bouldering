@@ -14,7 +14,8 @@
     <img src="../images/lightningbolt3.png">
     <% if (user) { %>
         <span>Welcome, <%= user.name %></span>
-        <a href="/posts/new">Post!</a>
+        <a href="/posts">Home</a>
+        <a href="/posts/new">Post</a>
         <a href="/logout">Log Out</a>
     <% } else { %>
         <a href="/auth/google" class="login">Log In</a>
