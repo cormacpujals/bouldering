@@ -3,27 +3,21 @@
 <h2>Look at all of these cool posts.</h2>
 
 
-<table>
-    <thead>
-    <tr>
-        <th>Photo</th>
-        <th>Name</th>
-        <th>Grade</th>
-        <th>Location</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% posts.forEach(function(p) { %>
-        <tr>
-            <td><img src="<%= p.img %>"/></td>
-            <td><%= p.name %></td>
-            <td><%= p.grade %></td>
-            <td><%= p.location %></td>
-            <td><a href="/posts/<%= p._id %>">Read more</a></td>
-        </tr>
-    <% }); %>
-    </tbody>
-</table>
+
+    <div id="posts-container">
+     <% posts.forEach(function(p) { %>
+            <div class="posts" >
+                <div style="width: 25vw; background-size: cover; background-image: url('<%= p.img %>')"></div>
+                <div>
+                    <h3><%= p.name %></h3>
+                    <h6><%= p.grade %></h6>
+                    <h6><%= p.location %></h6>
+                    <h6><a href="/posts/<%= p._id %>">Read more</a></h6>
+                </div>
+            </div>
+     <% }); %>
+    </div>
+
 
 
 

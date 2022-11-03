@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
+<form id="edit-form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
 
 
-    <h3>Edit a boulder!</h3>
-
+    <h1>Edit a boulder!</h1>
+    <br>
     <label>Image URL:</label>
     <input type="text" name="img" value=" <%= post.img %>">
 
     <label>Name:</label>
     <input type="text" name="name" value="<%= post.name %>">
 
-    <label>Grade</label>
+    <label>Grade:</label>
     <select name="grade">
         <% validGrades.forEach(function(grade, idx) { %>
             <option value="<%= grade %>" <%= idx === 0 ? 'selected' : ''%>>
@@ -26,18 +26,7 @@
     <label>Location:</label>
     <input type="text" name="location" value="<%= post.location %>">
 
-
-
-
-
-
-
-
-
-
-
-
-    <input type="submit" value="Edit Boulder">
+    <input type="submit" value="SUBMIT EDITS">
 </form>
 
 <%- include('../partials/footer') %>
