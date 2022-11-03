@@ -7,10 +7,8 @@
     <br>
     <label>Image URL:</label>
     <input type="text" name="img" value=" <%= post.img %>">
-
     <label>Name:</label>
     <input type="text" name="name" value="<%= post.name %>">
-
     <label>Grade:</label>
     <select name="grade">
         <% validGrades.forEach(function(grade, idx) { %>
@@ -19,13 +17,10 @@
             </option>
         <% }) %>
     </select>
-
     <label>Description:</label>
     <textarea type="text" name="description" value="<%= post.description %>"></textarea>
-
     <label>Location:</label>
     <input type="text" name="location" value="<%= post.location %>">
-
     <input type="submit" value="SUBMIT EDITS">
 </form>
 

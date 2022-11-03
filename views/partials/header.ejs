@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boulder Garden</title>
+    <title>Bouldering Paradise</title>
+    <link rel="icon" type="image/x-icon" href="../images/lightningbolt3.png">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-    <img src="../images/lightningbolt3.png">
+<nav id="header">
+    <img id="img" src="../images/lightningbolt3.png">
     <% if (user) { %>
         <span>Welcome, <%= user.name %></span>
         <a href="/posts">Home</a>

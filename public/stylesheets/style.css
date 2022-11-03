@@ -6,26 +6,38 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-body > nav {
+body > h1, h2, h3, h4, h5, h6 {
+  margin-left: 3vmin;
+}
+
+body > #header {
   width: 100vw;
   height: 5vh;
   background-color: turquoise;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
 }
 
-nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
+body > #footer {
+  width: 100vw;
+  height: 5vh;
+  background-color: turquoise;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 nav > a, span {
-  margin-right: 30px;
+  margin: auto;
   color: whitesmoke;
   text-decoration: none;
+}
+
+nav > #img {
+  width: 34px;
+  object-fit: contain;
+  margin: 3vmin;
 }
 
 #posts-container {
@@ -35,7 +47,7 @@ nav > a, span {
   align-items: center;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 80vh;
+  height: 90vh;
   padding-top: 50px;
 }
 
