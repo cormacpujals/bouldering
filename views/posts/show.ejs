@@ -2,20 +2,32 @@
 
 <h2>Look at this cool post.</h2>
 
-<table id="list">
+<table>
     <thead>
     <tr>
-        <th>Name</th>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Grade</th>
+      <th>Location</th>
+      <th>Description</th>
     </tr>
     </thead>
     <tbody>
         <tr>
-            <td><%= post.name %></td>
-        <% if (user) { %>
-            <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+          <td><img src="<%= post.img  %>"/></td>
+          <td><%= post.name %></td>
+          <td><%= post.grade %></td>
+          <td><%= post.location %></td>
+          <td><%= post.description %></td>
+
+
+        </tr>
+          <% if (user && post.user.equals(user._id)) { %>
+           <tr>
+           <td><a href="/posts/<%= post._id %>/edit">Edit Boulder</a>
+           <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
                 <button type="submit">DELETE BOULDER</button>
-            </form>
-            <a href="/posts/<%= post._id %>/edit">Edit Boulder</a>
+           </form></td>
         <% } else { %>
         <% } %>
         </tr>

@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/posts" method="POST">
+<form id="new-form" action="/posts" method="POST"
+      xmlns="http://www.w3.org/1999/html">
     <h3>Post a boulder!</h3>
     <label>Add image URL</label>
     <input type="text" name="img">
@@ -15,7 +16,7 @@
         <% }) %>
     </select>
     <label>Description:</label>
-    <input type="text" name="description" checked>
+    <textarea type="text" name="description"></textarea>
     <label>Location</label>
     <input type="text" name="location">
     <input type="submit" value="Add Boulder">

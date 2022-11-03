@@ -41,9 +41,10 @@ function show(req, res) {
 }
 
 function edit(req, res) {
+  const validGrades = Post.schema.path('grade').enumValues;
   Post.findOne({_id: req.params.id, user: req.user._id}, function(err, post) {
     if (err || !post) return res.redirect('/posts');
-    res.render('posts/edit', { post });
+    res.render('posts/edit', { post, validGrades });
   });
 }
 
