@@ -22,6 +22,8 @@ body > #header {
 body > #footer {
   width: 100vw;
   height: 5vh;
+  bottom: 0px;
+  position: absolute;
   background-color: turquoise;
   display: flex;
   justify-content: flex-end;
@@ -62,11 +64,39 @@ nav > #img {
   box-shadow: 5px 10px lightgray;
 }
 
-#edit-form, #new-form {
+#post-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#show-edit-delete {
+  margin-left: 10vmin;
+}
+
+#comments {
+  margin-left: 5vmin;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+#image {
+  margin-left: 8vmin;
+  margin-right: 8vmin;
+}
+
+#form {
   display: grid;
   grid-template-columns: auto auto;
 }
 
-#edit-form > input, label {
+#form > label {
   margin: 2vmin;
+  padding: 1vmin;
+}
+
+#form > button {
+  grid-column: span 2;
 }

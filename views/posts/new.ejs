@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-<form id="new-form" action="/posts" method="POST"
+<form id="form" action="/posts" method="POST"
       xmlns="http://www.w3.org/1999/html">
-    <h3>Post a boulder!</h3>
+    <h1>Post a boulder!</h3>
     <br>
     <label>Add image URL</label>
     <input type="text" name="img">
@@ -20,7 +20,7 @@
     <textarea type="text" name="description"></textarea>
     <label>Location</label>
     <input type="text" name="location">
-    <input type="submit" value="Add Boulder">
+    <button type="submit">Add Boulder</button>
 </form>
 
 <%- include('../partials/footer') %>

@@ -1,8 +1,6 @@
 <%- include('../partials/header') %>
 
-<form id="edit-form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
-
-
+<form id="form" action="/posts/<%= post._id %>?_method=PUT" method="POST">
     <h1>Edit a boulder!</h1>
     <br>
     <label>Image URL:</label>
@@ -21,7 +19,7 @@
     <textarea type="text" name="description" value="<%= post.description %>"></textarea>
     <label>Location:</label>
     <input type="text" name="location" value="<%= post.location %>">
-    <input type="submit" value="SUBMIT EDITS">
+    <button type="submit">Submit Edits</button>
 </form>
 
 <%- include('../partials/footer') %>
