@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
-const enumValues = require('mongoose-enumvalues');
-
 
 const Schema = mongoose.Schema;
-
 
 const commentSchema = new Schema({
   content: {
@@ -14,7 +11,6 @@ const commentSchema = new Schema({
     type: Number,
     min: 0,
     max: 4,
-    // required: true,
   },
   user: {
     type: Schema.Types.ObjectId,
@@ -26,7 +22,6 @@ const commentSchema = new Schema({
 }, {
   timestamps: true
 });
-
 
 const postSchema = new Schema({
   name: {
@@ -62,6 +57,5 @@ const postSchema = new Schema({
 }, {
   timestamps: true
 });
-
 
 module.exports = mongoose.model('Post', postSchema);

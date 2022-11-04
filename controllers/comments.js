@@ -27,8 +27,8 @@ function deleteComment(req, res, next) {
   // Note the cool "dot" syntax to query for a movie with a
   // review nested within an array
   Post.findOne({
-    'reviews._id': req.params.id,
-    'reviews.user': req.user._id
+    'comments._id': req.params.id,
+    'comments.user': req.user._id
   }).then(function(post) {
     if (!post) return res.redirect('/posts');
     post.comments.remove(req.params.id);
