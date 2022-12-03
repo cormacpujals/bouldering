@@ -7,11 +7,6 @@ const commentSchema = new Schema({
     type: String,
     required: true,
   },
-  rating: {
-    type: Number,
-    min: 0,
-    max: 4,
-  },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
