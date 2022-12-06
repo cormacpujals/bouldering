@@ -1,0 +1,7 @@
+googleapis:
+  - artifactregistry
+  - cloudbuild
+  - run
+project: boulderingparadise
+region: us-central1
+service: bouldering
